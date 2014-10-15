@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>Randomname</name>
+	<author>Jan-Frederik Stieler</author>
+	<creationDate>October 2014</creationDate>
+	<copyright>(C) 2014 Jan-Frederik Stieler. All rights reserved.</copyright>
+	<license>GNU/GPL</license>
+	<authorEmail>kontakt@janstieler.de</authorEmail>
+	<authorUrl>http://www.janstieler.de</authorUrl>
+	<version>1.0.0</version>
+	<description>Displays a randomname through a button.</description>
+	<files>	
+		<filename module="mod_randomname">mod_randomname.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>tmpl/default.php</filename>
+		<filename>tmpl/index.html</filename>
+		<folder>assets/css</folder>
+		<folder>assets/js</folder>
+		<folder>assets/images</folder>		
+		<folder>language</folder>
+		<folder>assets</folder>	
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_randomname.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.mod_randomname.ini</language>	
+		<language tag="de-DE">de-DE/de-DE.mod_randomname.sys.ini</language>
+		<language tag="de-DE">de-DE/de-DE.mod_randomname.ini</language>
+	</languages>
+	<help key="JHELP_EXTENSIONS_MODULE_MANAGER_CUSTOM_HTML" />
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="prepare_content"
+					type="radio"
+					label="MOD_RANDOMNAME_FIELD_PREPARE_CONTENT_LABEL"
+					description="MOD_RANDOMNAME_FIELD_PREPARE_CONTENT_DESC"
+					default="0">
+					<option
+						value="0">JNo</option>
+					<option
+						value="1">JYes</option>
+				</field>
+				<field name="backgroundimage" type="media"
+					label="MOD_RANDOMNAME_FIELD_BACKGROUNDIMAGE_LABEL" description="MOD_BACKGROUNDIMAGE_FIELD_LOGO_DESC" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field 
+					name="randomnames"
+					type="text"
+					label="names"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+				<field
+					name="cachemode"
+					type="hidden"
+					default="static">
+					<option
+						value="static"></option>
+				</field>
+			</fieldset>
+			<fieldset name="Jquery" label="Javascript">
+				<field name="loadjquery"
+					type="radio"
+					default="1"
+					label="MOD_RANDOMNAME_LOADJQUERY_LABEL"
+					description="MOD_RANDOMNAME_LOADJQUERY_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+			<fieldset name="bootstrap" label="Boostrap CSS">
+				<field name="loadbootstrap"
+					type="radio"
+					default="1"
+					label="MOD_RANDOMNAME_LOADBOOTSTRAP_LABEL"
+					description="MOD_RANDOMNAME_LOADBOOTSTRAP_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
